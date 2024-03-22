@@ -1,8 +1,11 @@
 import React from "react";
-
 import TicketCard from "./TicketCard";
 
-const TicketSection = () => {
+interface TicketSectionProps {
+  darkMode: boolean; // Add darkMode prop
+}
+
+const TicketSection: React.FC<TicketSectionProps> = ({ darkMode }) => {
   const ticketData = [
     {
       ticketImg: "/ticket1.png",
@@ -28,12 +31,26 @@ const TicketSection = () => {
   ];
 
   return (
-    <section className="bg-[#292B32] p-10 flex justify-center">
-      <div className="bg-gradient-to-b from-[#18282A] to-[#221A2C] flex flex-col items-center justify-center w-[80%] h-[90%] p-10">
-        <h1 className="text-5xl font-bold text-white mb-5">
+    <section
+      className={`bg-${
+        darkMode ? "[#292B32]" : "[#F3F4F6]"
+      } p-10 flex justify-center`}
+    >
+      <div
+        className={`bg-gradient-to-b from-${
+          darkMode ? "[#18282A]" : "[#FFFFFF]"
+        } to-${
+          darkMode ? "[#221A2C]" : "[#D1D5DB]"
+        } flex flex-col items-center justify-center w-[80%] h-[90%] p-10`}
+      >
+        <h1
+          className={`text-5xl font-bold text-${
+            darkMode ? "white" : "black"
+          } mb-5`}
+        >
           Collection Spotlight
         </h1>
-        <p className="text-white text-center">
+        <p className={`text-${darkMode ? "white" : "black"} text-center`}>
           Discover extraordinary moments with our Spotlight Collection
           metatickets—exclusive access to premium events for an unforgettable
           experience. Grab yours today!
@@ -47,6 +64,7 @@ const TicketSection = () => {
               eventDate={ticket.eventDate}
               eventLocation={ticket.eventLocation}
               ticketCollection={ticket.ticketCollection}
+              darkMode={darkMode} // Pass darkMode prop to TicketCard
             />
           ))}
         </div>

@@ -7,6 +7,7 @@ interface TicketProps {
   eventDate: string;
   eventLocation: string;
   ticketCollection: string;
+  darkMode: boolean; // Add darkMode prop
 }
 
 const TicketCard: React.FC<TicketProps> = ({
@@ -15,9 +16,14 @@ const TicketCard: React.FC<TicketProps> = ({
   eventDate,
   eventLocation,
   ticketCollection,
+  darkMode,
 }) => {
   return (
-    <div className="bg-[#3B3E47] text-white shadow-md w-full relative transition duration-300 hover:scale-105 hover:shadow-xl">
+    <div
+      className={`bg-${darkMode ? "[#3B3E47]" : "[#F3F4F6]"} text-${
+        darkMode ? "white" : "black"
+      }  shadow-2xl w-full relative transition duration-300 hover:scale-105 hover:shadow-xl`}
+    >
       <div className="overflow-hidden ">
         <Image
           src={ticketImg}
@@ -29,21 +35,50 @@ const TicketCard: React.FC<TicketProps> = ({
         />
       </div>
 
-      <div className="border-dashed border-2 border-white"></div>
+      <div
+        className={`border-dashed border-2 ${
+          darkMode ? "border-white" : "border-black"
+        }`}
+      ></div>
 
       <div className="p-3 relative">
-        <div className="absolute -left-2 top-0  transform -translate-y-1/2">
-          <div className="w-6 h-6 bg-[#221A2C] rounded-full"></div>
+        <div className="absolute left-0 top-0  transform -translate-y-1/2 overflow-hidden">
+          <div
+            className={`w-4 h-6 bg-${
+              darkMode ? "[#221A2C]" : "white"
+            } rounded-r-full`}
+          ></div>
         </div>
 
-        <div className="absolute -right-2 top-0 transform -translate-y-1/2">
-          <div className="w-6 h-6 bg-[#221A2C] rounded-full"></div>
+        <div className="absolute right-0 top-0 transform -translate-y-1/2">
+          <div
+            className={`w-4 h-6 bg-${
+              darkMode ? "[#221A2C]" : "white"
+            } rounded-l-full`}
+          ></div>
         </div>
         <div className=" flex flex-col items-center justify-center space-y-4">
-          <h1 className="text-md font-semibold">{teamName}</h1>
-          <p className=" text-sm"> {eventDate} </p>
-          <p className="text-sm text-center px-2">{eventLocation}</p>
-          <div className="bg-black w-full py-2 flex items-end justify-center text-sm ">
+          <h1
+            className={`text-md font-semibold ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          >
+            {teamName}
+          </h1>
+          <p className={`text-sm ${darkMode ? "text-white" : "text-black"}`}>
+            {" "}
+            {eventDate}{" "}
+          </p>
+          <p
+            className={`text-sm text-center px-2 ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          >
+            {eventLocation}
+          </p>
+          <div
+            className={`bg-black text-white w-full py-2 flex items-end justify-center text-sm `}
+          >
             {ticketCollection}
           </div>
         </div>
