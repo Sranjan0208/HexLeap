@@ -6,7 +6,7 @@ interface PlayerCardProps {
   playerTeam: string;
   eventNumber: number;
   sport: string;
-  darkMode: boolean; // Add darkMode prop
+  darkMode: boolean;
 }
 
 const PlayerCard: React.FC<PlayerCardProps> = ({
@@ -28,8 +28,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
           alt="Player Image"
           width={200}
           height={400}
-          className="p-3 w-full h-[400px]"
-          layout="fixed"
+          className="p-3 w-full h-auto"
+          layout="responsive"
         />
       </div>
       <div className="p-3">
@@ -37,9 +37,9 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
         <div
           className={`bg-${
             darkMode ? "[#292B32]" : "gray-200"
-          } p-3 flex justify-between`}
+          } p-3 flex flex-col sm:flex-row justify-between`}
         >
-          <div>
+          <div className="mb-2 sm:mb-0">
             <p
               className={`text-${
                 darkMode ? "gray-300" : "gray-600"

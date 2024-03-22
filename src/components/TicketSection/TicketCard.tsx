@@ -7,7 +7,7 @@ interface TicketProps {
   eventDate: string;
   eventLocation: string;
   ticketCollection: string;
-  darkMode: boolean; // Add darkMode prop
+  darkMode: boolean;
 }
 
 const TicketCard: React.FC<TicketProps> = ({
@@ -22,34 +22,31 @@ const TicketCard: React.FC<TicketProps> = ({
     <div
       className={`bg-${darkMode ? "[#3B3E47]" : "[#F3F4F6]"} text-${
         darkMode ? "white" : "black"
-      }  shadow-2xl w-full relative transition duration-300 hover:scale-105 hover:shadow-xl`}
+      } shadow-2xl w-full relative transition duration-300 hover:scale-105 hover:shadow-xl`}
     >
-      <div className="overflow-hidden ">
+      <div className="overflow-hidden">
         <Image
           src={ticketImg}
           alt="Player Image"
           width={400}
           height={400}
-          className="p-3  h-[400px]"
-          layout="fixed"
+          className="p-3 h-[400px] w-full object-cover"
+          layout="responsive"
         />
       </div>
-
       <div
         className={`border-dashed border-2 ${
           darkMode ? "border-white" : "border-black"
         }`}
       ></div>
-
       <div className="p-3 relative">
-        <div className="absolute left-0 top-0  transform -translate-y-1/2 overflow-hidden">
+        <div className="absolute left-0 top-0 transform -translate-y-1/2 overflow-hidden">
           <div
             className={`w-4 h-6 bg-${
               darkMode ? "[#221A2C]" : "white"
             } rounded-r-full`}
           ></div>
         </div>
-
         <div className="absolute right-0 top-0 transform -translate-y-1/2">
           <div
             className={`w-4 h-6 bg-${
@@ -66,8 +63,7 @@ const TicketCard: React.FC<TicketProps> = ({
             {teamName}
           </h1>
           <p className={`text-sm ${darkMode ? "text-white" : "text-black"}`}>
-            {" "}
-            {eventDate}{" "}
+            {eventDate}
           </p>
           <p
             className={`text-sm text-center px-2 ${

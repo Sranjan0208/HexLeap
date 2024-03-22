@@ -10,7 +10,7 @@ const AdvertisementCard: React.FC<AdvertisementCardProps> = ({ darkMode }) => {
     <div
       className={`relative bg-${darkMode ? "[#3B3E47]" : "[#F3F4F6]"} text-${
         darkMode ? "white" : "black"
-      }  shadow-xl  transition duration-300 hover:scale-105 hover:shadow-xl`}
+      } shadow-xl transition duration-300 hover:scale-105 hover:shadow-xl`}
     >
       <div className="overflow-hidden">
         <Image
@@ -18,10 +18,11 @@ const AdvertisementCard: React.FC<AdvertisementCardProps> = ({ darkMode }) => {
           alt="Advertisement"
           width={500}
           height={500}
-          className="p-3 w-full"
+          className="p-3 w-full h-auto"
+          layout="responsive"
         />
         <div
-          className={`absolute top-0 right-0 bg-black text-white px-3  m-3 text-sm font-semibold`}
+          className={`absolute top-0 right-0 bg-black text-white px-3 m-3 text-sm font-semibold`}
         >
           Ad
         </div>
@@ -36,9 +37,7 @@ const AdvertisementCard: React.FC<AdvertisementCardProps> = ({ darkMode }) => {
             >
               Advertisement title
             </p>
-            <p
-              className={`text-${darkMode ? "gray-300" : "gray-700"} text-sm `}
-            >
+            <p className={`text-${darkMode ? "gray-300" : "gray-700"} text-sm`}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
               ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
