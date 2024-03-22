@@ -35,8 +35,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({
       <div className="p-3">
         <h2 className="text-lg mb-2">{playerTeam}</h2>
         <div
-          className={`bg-${
-            darkMode ? "[#292B32]" : "gray-200"
+          className={`${
+            darkMode ? "bg-[#292B32]" : "bg-gray-200"
           } p-3 flex flex-col sm:flex-row justify-between`}
         >
           <div className="mb-2 sm:mb-0">

@@ -37,11 +37,9 @@ const TicketSection: React.FC<TicketSectionProps> = ({ darkMode }) => {
       } p-10 flex justify-center`}
     >
       <div
-        className={`bg-gradient-to-b from-${
-          darkMode ? "[#18282A]" : "[#FFFFFF]"
-        } to-${
-          darkMode ? "[#221A2C]" : "[#D1D5DB]"
-        } flex flex-col items-center justify-center w-[90%] sm:w-[80%] p-10`}
+        className={`${
+          darkMode ? "bg-gradient-to-b from-[#18282A] to-[#221A2C]" : "bg-white"
+        }  flex flex-col items-center justify-center w-[90%] sm:w-[80%] p-10`}
       >
         <h1
           className={`text-3xl sm:text-4xl md:text-5xl font-bold text-${
