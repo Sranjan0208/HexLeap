@@ -20,8 +20,8 @@ const TicketCard: React.FC<TicketProps> = ({
 }) => {
   return (
     <div
-      className={`bg-${darkMode ? "[#3B3E47]" : "[#F3F4F6]"} text-${
-        darkMode ? "white" : "black"
+      className={`${darkMode ? "bg-[#3B3E47]" : "bg-[#F3F4F6]"} ${
+        darkMode ? "text-white" : "text-black"
       } shadow-2xl w-full relative transition duration-300 hover:scale-105 hover:shadow-xl`}
     >
       <div className="overflow-hidden">
@@ -42,15 +42,15 @@ const TicketCard: React.FC<TicketProps> = ({
       <div className="p-3 relative">
         <div className="absolute left-0 top-0 transform -translate-y-1/2 overflow-hidden">
           <div
-            className={`w-4 h-6 bg-${
-              darkMode ? "[#221A2C]" : "white"
+            className={`w-4 h-6 ${
+              darkMode ? "bg-[#221A2C]" : "bg-white"
             } rounded-r-full`}
           ></div>
         </div>
         <div className="absolute right-0 top-0 transform -translate-y-1/2">
           <div
-            className={`w-4 h-6 bg-${
-              darkMode ? "[#221A2C]" : "white"
+            className={`w-4 h-6 ${
+              darkMode ? "bg-[#221A2C]" : "bg-white"
             } rounded-l-full`}
           ></div>
         </div>
